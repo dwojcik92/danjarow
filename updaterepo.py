@@ -39,7 +39,8 @@ def build_aur_packages():
     pkg_dirs.remove('./x86_64/')
     for repo in pkg_dirs:
         os.chdir(repo)
-        command = "makepkg -fc"
+        # command = "makepkg -fc" # force clean
+        command = "makepkg"
         subprocess.run(command.split())
         # list all pkg files
         pkg_files = os.listdir('.')
@@ -56,7 +57,7 @@ def update_repo_list():
     for p in packages:
         packages_str = packages_str+" "+p
     print(packages_str)
-    command = "repo-add dajnarow.db.tar.gz "+packages_str
+    command = "repo-add danjarow.db.tar.gz "+packages_str
     subprocess.run(command.split())
 
 
