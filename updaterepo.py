@@ -39,12 +39,10 @@ def build_aur_packages():
     pkg_dirs.remove('./x86_64/')
     for repo in pkg_dirs:
         os.chdir(repo)
-        # command = "makepkg -fc"
-        # subprocess.run(command.split())
+        command = "makepkg -fc"
+        subprocess.run(command.split())
         # list all pkg files
         pkg_files = os.listdir('.')
-        # command = "makepkg -fc"
-        # subprocess.run()
         for filename in pkg_files:
             if('.pkg.tar.xz'.upper() in filename.upper()):
                 command = "cp "+filename+" ../x86_64"
