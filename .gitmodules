@@ -1,0 +1,6 @@
+[submodule "zsh-git"]
+	path = zsh-git
+	url = https://aur.archlinux.org/zsh-git.git
+[submodule "yodl-git"]
+	path = yodl-git
+	url = https://aur.archlinux.org/yodl-git.git
