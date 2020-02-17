@@ -1,5 +1,8 @@
 icmake
 code
+# -----------------
+# plasma packages
+# -----------------
 plasma
 bluedevil
 breeze
@@ -33,3 +36,4 @@ sddm-kcm
 systemsettings
 user-manager
 xdg-desktop-portal-kde
+# -----------------

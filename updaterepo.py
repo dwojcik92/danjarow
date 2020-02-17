@@ -8,7 +8,11 @@ def clone_community_packages():
         list_of_packages = []
         packages1 = f.readlines()
         for item in packages1:
-            list_of_packages.append(item.rstrip())
+            # ommit comments
+            if(item[0]=="#"):
+                pass
+            else:
+                list_of_packages.append(item.rstrip())
 
     # download packages
     for item in list_of_packages:
@@ -29,7 +33,7 @@ def install_packages():
     os.chdir('x86_64')
     packages = os.listdir('.')
     for package in packages:
-        command = "sudo pacman --noconfirm -U "+package
+        command = "sudo pacman --needed --noconfirm -U "+package
         subprocess.run(command.split())  
 
 def build_aur_packages():
