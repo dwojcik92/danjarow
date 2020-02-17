@@ -59,7 +59,9 @@ def update_repo_list():
     packages = os.listdir('.')
     packages_str = ''
     for p in packages:
-        if('.pkg.tar.xz'.upper() in p.upper()):
+        if1 = ('.pkg.tar.xz'.upper() in p.upper())
+        if2 = ('.pkg.tar.zst'.upper() in p.upper())
+        if if1 or if2:
                 packages_str = packages_str+" "+p
     command = "repo-add danjarow.db.tar.gz "+packages_str
     subprocess.run(command.split())
