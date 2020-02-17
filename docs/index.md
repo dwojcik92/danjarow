@@ -1,1 +1,0 @@
-# Danjarow Arch repository
